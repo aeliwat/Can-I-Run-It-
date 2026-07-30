@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Phi-3 Mini 3.8B (Q4)",
+    "parametersInBillions": 3.8,
+    "quantizationBits": 4,
+    "contextBufferGb": 0.5,
+    "category": "LLM"
+  },
+  {
+    "name": "Llama 3 8B (Q4)",
+    "parametersInBillions": 8.0,
+    "quantizationBits": 4,
+    "contextBufferGb": 1.0,
+    "category": "LLM"
+  },
+  {
+    "name": "Mistral 7B (Q8)",
+    "parametersInBillions": 7.0,
+    "quantizationBits": 8,
+    "contextBufferGb": 1.5,
+    "category": "LLM"
+  },
+  {
+    "name": "Gemma 2 9B (Q4)",
+    "parametersInBillions": 9.0,
+    "quantizationBits": 4,
+    "contextBufferGb": 1.2,
+    "category": "LLM"
+  },
+  {
+    "name": "Stable Diffusion XL (FP16)",
+    "parametersInBillions": 3.5,
+    "quantizationBits": 16,
+    "contextBufferGb": 2.0,
+    "category": "Image"
+  },
+  {
+    "name": "Mixtral 8x7B (Q5)",
+    "parametersInBillions": 46.7,
+    "quantizationBits": 5,
+    "contextBufferGb": 3.0,
+    "category": "LLM"
+  },
+  {
+    "name": "Llama 3 70B (Q4)",
+    "parametersInBillions": 70.0,
+    "quantizationBits": 4,
+    "contextBufferGb": 4.0,
+    "category": "LLM"
+  },
+  {
+    "name": "Qwen2.5 32B (Q4)",
+    "parametersInBillions": 32.0,
+    "quantizationBits": 4,
+    "contextBufferGb": 2.5,
+    "category": "LLM"
+  },
+  {
+    "name": "Whisper Large V3 (FP16)",
+    "parametersInBillions": 1.55,
+    "quantizationBits": 16,
+    "contextBufferGb": 1.0,
+    "category": "Audio"
+  }
+]

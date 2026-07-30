@@ -1,0 +1,28 @@
+services:
+  can-i-run-it:
+    build: .
+    image: can-i-run-it:latest
+    container_name: can-i-run-it
+    ports:
+      - "7421:7421"
+    volumes:
+      # Persist custom models added via the UI / CLI
+      - can-i-run-it-data:/root/.can-i-run-it
+      # Helpful for hardware probing on Linux hosts
+      - /sys:/sys:ro
+    environment:
+      CAN_I_RUN_IT_BIND: "0.0.0.0"
+    command: ["--ui", "--no-browser", "--port", "7421"]
+    # Uncomment if you have NVIDIA Container Toolkit installed:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+    restart: unless-stopped
+
+volumes:
+  can-i-run-it-data:
+    name: can-i-run-it-data

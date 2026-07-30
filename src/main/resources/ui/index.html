@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Can I Run It?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="top">
+    <p class="brand">Can I Run It?</p>
+    <p class="tagline">Local hardware vs. AI model memory — scanned on this machine.</p>
+  </header>
+
+  <main>
+    <section class="hardware" aria-labelledby="hw-title">
+      <div class="section-head">
+        <h1 id="hw-title">Your machine</h1>
+        <button type="button" id="refresh" class="refresh">Rescan</button>
+      </div>
+      <div id="hardware" class="hw-grid" aria-live="polite">
+        <p class="loading">Detecting hardware…</p>
+      </div>
+    </section>
+
+    <section class="models" aria-labelledby="models-title">
+      <div class="section-head">
+        <h2 id="models-title">Model fit</h2>
+        <div class="filters" role="group" aria-label="Filter by status">
+          <button type="button" class="filter is-active" data-filter="ALL">All</button>
+          <button type="button" class="filter" data-filter="OPTIMAL">Optimal</button>
+          <button type="button" class="filter" data-filter="SLOW">Slow</button>
+          <button type="button" class="filter" data-filter="INCOMPATIBLE">No</button>
+        </div>
+      </div>
+      <div id="models" class="model-list" aria-live="polite"></div>
+    </section>
+
+    <section class="add-model" aria-labelledby="add-title">
+      <div class="section-head">
+        <h2 id="add-title">Add an LLM</h2>
+      </div>
+      <p class="add-lead">Save a custom model to this machine. It will appear in the list above on every run.</p>
+      <form id="add-form" class="add-form">
+        <label>
+          <span>Name</span>
+          <input name="name" type="text" required maxlength="80" placeholder="e.g. Llama 3.1 8B (Q5)" />
+        </label>
+        <label>
+          <span>Params (B)</span>
+          <input name="parametersInBillions" type="number" required min="0.1" step="0.1" placeholder="8" />
+        </label>
+        <label>
+          <span>Quant bits</span>
+          <input name="quantizationBits" type="number" required min="1" step="1" value="4" />
+        </label>
+        <label>
+          <span>Context buffer (GB)</span>
+          <input name="contextBufferGb" type="number" min="0" step="0.1" value="1.0" />
+        </label>
+        <label>
+          <span>Category</span>
+          <input name="category" type="text" maxlength="40" value="LLM" />
+        </label>
+        <div class="add-actions">
+          <button type="submit" class="refresh">Add model</button>
+          <p id="add-status" class="add-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Required ≈ (params × bits ÷ 8) × 1.15 + context buffer. Rule of thumb — not a benchmark.</p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

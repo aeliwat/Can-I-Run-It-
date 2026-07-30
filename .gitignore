@@ -1,0 +1,23 @@
+# Build
+target/
+*.class
+*.jar
+!**/src/**/resources/**
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local / secrets
+.env
+*.log
