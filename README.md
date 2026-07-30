@@ -14,6 +14,16 @@ Includes a terminal report, JSON output, and a local web UI.
 
 ---
 
+## Features
+
+- Auto-detects system RAM and GPUs (via [OSHI](https://github.com/oshi/oshi))
+- Built-in model catalog (`models.json`)
+- Add your own LLMs from the CLI or web UI
+- Upgrade tips: VRAM shortfall + example GPUs to reach OPTIMAL
+- Local-only web UI (nothing is sent to a server)
+- Docker image + Compose for easy sharing
+---
+
 ## Requirements
 
 - **Docker** / **Docker Compose** (easiest), **or**
@@ -97,16 +107,6 @@ java -jar target/can-i-run-it-1.0.0-SNAPSHOT.jar --ui
 java -jar target/can-i-run-it-1.0.0-SNAPSHOT.jar --json
 ```
 
----
-
-## Features
-
-- Auto-detects system RAM and GPUs (via [OSHI](https://github.com/oshi/oshi))
-- Built-in model catalog (`models.json`)
-- Add your own LLMs from the CLI or web UI
-- Upgrade tips: VRAM shortfall + example GPUs to reach OPTIMAL
-- Local-only web UI (nothing is sent to a server)
-- Docker image + Compose for easy sharing
 
 ---
 
@@ -157,16 +157,3 @@ For models that are not OPTIMAL, the tool suggests how much **VRAM** you need fo
 Edit `src/main/resources/models.json`, or pass `--models`.
 
 ---
-
-## Project layout
-
-```text
-com.canirunit            Entry point (Main)
-com.canirunit.model      Domain types
-com.canirunit.detect     Hardware detection
-com.canirunit.catalog    Model catalog + custom model store
-com.canirunit.calc       Memory / compatibility math
-com.canirunit.service    Orchestration
-com.canirunit.cli        Terminal / JSON output
-com.canirunit.ui         Local web UI server
-```
