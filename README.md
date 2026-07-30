@@ -158,7 +158,7 @@ Edit `src/main/resources/models.json`, or pass `--models`.
 
 ---
 
-## Project layout
+### Project layout
 
 ```text
 com.canirunit            Entry point (Main)
