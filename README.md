@@ -1,4 +1,5 @@
 # Can I Run It?
+[![CI](https://github.com)](https://github.com)
 
 Check whether your machine can run local AI models.
 
