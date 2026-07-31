@@ -3,6 +3,8 @@
 
 Check whether your machine can run local AI models.
 
+![Screenshot](Screenshot from 2026-07-30 17-22-31.png)
+
 It detects your **RAM** and **GPU VRAM**, then estimates memory needs for a catalog of models. Results show as:
 
 | Status | Meaning |
