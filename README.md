@@ -1,5 +1,5 @@
 # Can I Run It?
-[![CI](https://github.com)](https://github.com)
+[![CI](https://github.com/aeliwat/Can-I-Run-It-/actions/workflows/blank.yml/badge.svg)](https://github.com/aeliwat/Can-I-Run-It-/actions/workflows/blank.yml)
 
 Check whether your machine can run local AI models.
 
